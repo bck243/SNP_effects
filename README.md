@@ -1,7 +1,7 @@
 # SNP_effects
 Determine the effect of SNPs on amino acid sequences (e.g. are whether mutations are synonymous)
 
-* SNPs were called on *ab initio* ORFs using [bcftools](http://samtools.github.io/bcftools/bcftools.html) (mpileup, call, query) yielding a tab-delimited output with the columns: CHROM (chromosome aka ORF ID), POS (position of SNP on chromosome), REF (nucleotide identity of reference ORF at SNP location), ALT (nucleotide identity of SNP), AD (allelic depth), QUAL (quality), DP (number of reads covering the base at the call position), MQ (root mean square mapping quality). An example SNP output file is *mb1_allele_positions.tab*, included here. This tab delimited output is the [allele file] used as input for **check_ORF_frames.pl** and **get_snp_effects.pl**.
+* SNPs were called on *ab initio* open reading frames (ORFs) using [bcftools](http://samtools.github.io/bcftools/bcftools.html) (mpileup, call, query) yielding a tab-delimited output with the columns: CHROM (chromosome aka ORF ID), POS (position of SNP on chromosome), REF (nucleotide identity of reference ORF at SNP location), ALT (nucleotide identity of SNP), AD (allelic depth), QUAL (quality), DP (number of reads covering the base at the call position), MQ (root mean square mapping quality). An example SNP output file is *mb1_allele_positions.tab*, included here. This tab delimited output is the [allele file] used as input for **check_ORF_frames.pl** and **get_snp_effects.pl**.
 
 * Note that to compare SNPs across conditions downstream, read coverage should be downsampled to the levels of the least-covered condition before calling SNPs
 
