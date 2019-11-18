@@ -118,7 +118,7 @@ print OUT join("\t", ("orf_id", "snp_position", "reference_nucleotide", "first_n
       chomp;
       my ($orf_id, $snp_position, $ref_snp_nt, $new_snp_nt) = split(/\t/);
       $row_number ++;
-      print STDERR "Parsing ORF ".$row_number." of ".(scalar @orf_list)."\n";
+      print STDERR "Parsing SNP ".$row_number." of ".(scalar @orf_list)."\n";
       ##############################
       #Get SNP position
       ##############################
@@ -301,7 +301,7 @@ print OUT join("\t", ("orf_id", "snp_position", "reference_nucleotide", "first_n
       ##############################
       #output is: "orf_id", "snp_position", "reference_nucleotide", "first_new_nucleotide", "reference_codon", "new_codon", "snp_position_in_codon","translated_reference_codon", "translated_new_codon", "synonymous"
       print OUT join("\t", ($orf_id, ($snp_position+1), $ref_snp_nt, $new_snp_nt, $ref_codon, $new_codon, $codon_position, $ref_aa, $new_aa, $is_synonymous))."\n";
-      print STDERR "Parsed ORF ".$row_number." of ".(scalar @orf_list)."\n----------------------------\n";
+      print STDERR "Parsed SNP ".$row_number." of ".(scalar @orf_list)."\n----------------------------\n";
   }
   close(IN);
   print STDERR "Parsed allele file \n";
