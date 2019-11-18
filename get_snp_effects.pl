@@ -299,8 +299,7 @@ print OUT join("\t", ("orf_id", "snp_position", "reference_nucleotide", "first_n
       ##############################
       #write out
       ##############################
-      #output is: "orf_id", "nt_snp_position", "nt_snp", "remainder", "codon", "translated_aa", "orf_aa"
-      #"orf_id", "snp_position", "reference_nucleotide", "first_new_nucleotide", "reference_codon", "new_codon", "snp_position_in_codon","translated_reference_codon", "translated_new_codon", "synonymous"
+      #output is: "orf_id", "snp_position", "reference_nucleotide", "first_new_nucleotide", "reference_codon", "new_codon", "snp_position_in_codon","translated_reference_codon", "translated_new_codon", "synonymous"
       print OUT join("\t", ($orf_id, ($snp_position+1), $ref_snp_nt, $new_snp_nt, $ref_codon, $new_codon, $codon_position, $ref_aa, $new_aa, $is_synonymous))."\n";
       print STDERR "Parsed ORF ".$row_number." of ".(scalar @orf_list)."\n----------------------------\n";
   }
