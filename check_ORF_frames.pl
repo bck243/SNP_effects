@@ -143,7 +143,7 @@ print OUT join("\t", ("orf_id", "nt_snp_position", "reference_nt_snp", "snp_posi
       #print STDERR "before opening allele file, \$snp_position is set to".$snp_position."\n";
       my ($orf_id, $snp_position, $ref_snp_nt) = split(/\t/);
       $row_number ++;
-      print STDERR "Parsing ORF ".$row_number." of ".(scalar @orf_list)."\n";
+      print STDERR "Parsing SNP ".$row_number." of ".(scalar @orf_list)."\n";
       #print STDERR "After opening allele file, \$snp_position is set to".$snp_position."\n";
       ##############################
       #Get SNP position
@@ -282,7 +282,7 @@ print OUT join("\t", ("orf_id", "nt_snp_position", "reference_nt_snp", "snp_posi
       ##############################
       #output is: "orf_id", "nt_snp_position", "nt_snp", "snp_position_in_codon", "codon", "translated_aa", "orf_aa"
       print OUT join("\t", ($orf_id, ($snp_position+1), $ref_snp_nt, $codon_position, $codon, $ref_aa, $snp_aa))."\n";
-      print STDERR "Parsed ORF ".$row_number." of ".(scalar @orf_list)."\n----------------------------\n";
+      print STDERR "Parsed SNP ".$row_number." of ".(scalar @orf_list)."\n----------------------------\n";
   }
   close(IN);
   print STDERR "Parsed allele file \n";
