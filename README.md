@@ -16,9 +16,11 @@ This repository contains the following scripts:
    * **amino acid fasta file**: fasta headers must be identical to ORF ID (following ">") 
    * The desired output file name. 
   * Produces an output spreadsheet with columns for: ORF ID, SNP position in ORF, reference SNP nucleotide, SNP position in codon (1st, 2nd, or 3rd), codon, translated amino acid from codon, and reference amino acid from amino acid fasta file. 
+  * note: will break if given a codon containing an unspecified nucleotide ("N") with error: "The reference codon is not a valid amino acid"
 * **get_snp_effects.pl**
   * perl script that gives codon and amino acid translation of SNPs and reference positions, and determines whether SNPs are synonymous
   * Input: 
    * **Allele file**: a tab delimited and contains columns for ORF ID, SNP position, and reference nucleotide, in that order. Additional columns are acceptable.
    * **nucleotide fasta file**: fasta headers must be identical to ORF ID (following ">") 
    * The desired output file name. 
+   * codons containing unspecified nucleotides ("N") will be translated to amino acid "X", but SNP information will still be produced
