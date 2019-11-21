@@ -67,8 +67,6 @@ open(IN, $allelefile) or die "Unable to open file $allelefile\nAllele file is ta
 while(<IN>) {
     chomp;
     my ($orf_id, $snp_position, $ref_snp_nt, $new_snp_nt) = split(/\t/);
-    #my $pattern = $orf_id.$snp_position;
-    #pattern must be ORF + postion because there are redundant ORF IDs
     push(@orf_list, $orf_id);
 }
 close(IN);
@@ -121,7 +119,7 @@ print OUT join("\t", ("orf_id", "snp_position", "reference_nucleotide", "first_n
       #split by comma: https://www.geeksforgeeks.org/perl-split-function/
       my @spl = split(',', $new_snp_nt);
       $new_snp_nt = $spl[0]; #only use first value
-      print STDERR "\$new_snp_nt is ".$new_snp_nt."\n";
+      #print STDERR "\$new_snp_nt is ".$new_snp_nt."\n";
       $row_number ++;
       print STDERR "Parsing SNP ".$row_number." of ".(scalar @orf_list)."\n";
       ##############################
