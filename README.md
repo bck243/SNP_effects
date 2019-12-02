@@ -24,3 +24,5 @@ This repository contains the following scripts:
    * **nucleotide fasta file**: fasta headers must be identical to ORF ID (following ">") 
    * The desired output file name. 
    * codons containing unspecified nucleotides ("N") will be translated to amino acid "X", but SNP information will still be produced
+* **get_snp_effects_n.pl**
+  * variant of get_snp_effects.pl that also reports nitrogeon atom flux as a result of a SNP (the difference in nitrogen atoms between the reference amino acid and new amino acid) 
